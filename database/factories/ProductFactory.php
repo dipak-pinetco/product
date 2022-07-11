@@ -12,16 +12,16 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         return [
-            'title'=>fake()->userName,
-            'bodyHtml'=>fake()->randomHtml,
-            'vendor'=>fake()->streetName,
-            'product_type'=>fake()->mimeType(),
-            'handle'=>fake()->realText,
-            'template_suffix'=>fake()->domainName,
-            'status'=>fake()->randomElement(['active','block']),
-            'admin_graphql_api_id'=>fake()->uuid,
-            'published_at'=>fake()->dateTime,
-            'published_scope'=>fake()->name,
+            'title'                => fake()->userName,
+            'bodyHtml'             => fake()->randomHtml,
+            'vendor'               => fake()->streetName,
+            'product_type'         => fake()->mimeType(),
+            'handle'               => fake()->realText,
+            'template_suffix'      => fake()->domainName,
+            'status'               => fake()->randomElement(['active', 'block']),
+            'admin_graphql_api_id' => fake()->uuid,
+            'published_at'         => fake()->dateTime,
+            'published_scope'      => fake()->name,
         ];
     }
 }

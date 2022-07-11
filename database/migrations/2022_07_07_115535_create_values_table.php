@@ -10,7 +10,7 @@ return new class extends Migration {
         Schema::create('values', function (Blueprint $table) {
             $table->id();
             $table->foreignId('option_id');
-            $table->string('value',50);
+            $table->string('value', 50);
             $table->timestamps();
         });
     }
