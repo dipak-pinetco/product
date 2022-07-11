@@ -17,7 +17,7 @@ class ProductSeeder extends Seeder
     {
         $tags=Tag::pluck('id');
         $options=Option::pluck('id');
-        Product::factory(100000)
+        Product::factory(10)
             ->has(Image::factory(rand(4,8)))
             ->has(Variant::factory(rand(4,8)))
             ->create()
