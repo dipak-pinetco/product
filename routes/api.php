@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Api\LoginController;
+use App\Http\Controllers\Api\ProductsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('login', [\App\Http\Controllers\Api\LoginController::class, 'login']);
+Route::post('login', [LoginController::class, 'login']);
 
-    Route::resource('product',\App\Http\Controllers\Api\ProductsController::class)->only(['index']);
 Route::middleware(['auth:sanctum'])->group(function () {
-    Route::get('logout', [\App\Http\Controllers\Api\LoginController::class, 'logout']);
+    Route::resource('product', ProductsController::class)->only(['index']);
+    Route::get('logout', [LoginController::class, 'logout']);
 });
